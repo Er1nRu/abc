@@ -1,0 +1,33 @@
+﻿<Window x:Class="abc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Label Content="Введите ник"/>
+            <TextBox x:Name="nickname" TextChanged="nickname_TextChanged"/>
+            <Label Content="Введите текст"/>
+            <TextBox x:Name="date" TextChanged="nickname_TextChanged"/>
+            <Button x:Name="btnSend" Content="Отправить" Click="btnSend_Click"/>
+            <Button x:Name="btnEdit" Content="Редактировать" Click="btnEdit_Click" />
+        </StackPanel>
+        <ListView Name="dateList" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="80" Header="Ник" DisplayMemberBinding="{Binding Path=Nick}"/>
+                    <GridViewColumn Width="100" Header="Сообщение" DisplayMemberBinding="{Binding Path=Date}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        
+    </Grid>
+</Window>
